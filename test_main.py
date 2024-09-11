@@ -1,6 +1,8 @@
-from main import get_mean, get_median, get_std
+
 import numpy as np
 import pandas as pd
+from main import get_mean, get_median, get_std
+
 
 df = pd.read_csv(
     "https://raw.githubusercontent.com/anlane611/datasets/main/population.csv"
