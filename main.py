@@ -27,7 +27,7 @@ def get_mean(script):
     for i in range(len(script)):
         sum_script += script[i]
 
-    mean_script = sum / len(script)
+    mean_script = sum_script / len(script)
     return round(mean_script, 3)
 
 
