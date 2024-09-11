@@ -15,8 +15,8 @@
 Purpose for this project:
 1. Use Pandas to read csv file
 2. Write functions for calculating mean, median and standard deviation for variables in the csv file
-3. compare the functions for the accuracy
-4. create data visualization (a boxplot) for variable Y
+3. Compare the functions for the accuracy
+4. Create data visualization (a boxplot) for variable Y
 
 
 
