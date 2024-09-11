@@ -12,6 +12,7 @@ Generated summary report (PDF or markdown)"""
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from ydata_profiling import ProfileReport
 
 
 df = pd.read_csv(
@@ -69,3 +70,11 @@ plt.xlabel("variable_Y")
 plt.ylabel("values")
 plt.title("Visualization for Boxplot of variable_Y")
 plt.show()
+
+
+# create summary report pdf
+def create_pdf(csv):
+    """generates report of any dataset"""
+    df_to_generate = pd.read_csv(csv)
+    profile = ProfileReport(df_to_generate, title="Population Summary Report")
+    profile.to_file("summary_report.html")
