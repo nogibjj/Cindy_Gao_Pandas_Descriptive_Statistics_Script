@@ -19,6 +19,7 @@ df = pd.read_csv(
 )
 
 df_y = df["Y"]
+print(df_y)
 
 
 # calculate the mean of variable Y:
@@ -61,7 +62,7 @@ def get_std(script):
 print(get_std(df_y))
 
 
-# data visualization: boxplot for variabnle Y"
+# data visualization: boxplot for variable Y"
 plt.boxplot(df_y)
 plt.xlabel("variable_Y")
 plt.ylabel("values")

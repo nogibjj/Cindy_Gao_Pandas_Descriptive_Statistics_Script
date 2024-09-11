@@ -1,7 +1,6 @@
-
+from main import get_mean, get_median, get_std
 import numpy as np
 import pandas as pd
-from main import get_mean, get_median, get_std
 
 
 df = pd.read_csv(
@@ -9,6 +8,8 @@ df = pd.read_csv(
 )
 
 df_y = df["Y"]
+
+print(df_y.describe())
 
 
 def test_mean():
