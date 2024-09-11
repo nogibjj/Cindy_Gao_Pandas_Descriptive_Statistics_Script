@@ -23,9 +23,9 @@ df_y = df["Y"]
 
 # calculate the mean of variable Y:
 def get_mean(script):
-    sum = 0
+    sum_script = 0
     for i in range(len(script)):
-        sum += script[i]
+        sum_script += script[i]
 
     mean_script = sum / len(script)
     return round(mean_script, 3)
