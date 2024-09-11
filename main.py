@@ -49,6 +49,7 @@ def get_median(script):
 print(get_median(df_y))
 
 
+# calculate the standard deviation of variable Y:
 def get_std(script):
     num = len(script)
     mean_s = np.mean(script)
