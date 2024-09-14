@@ -5,7 +5,7 @@ format:
 	black .
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py . *.ipynb
+	pylint --disable=R,C --ignore-patterns=test_.*?py . 
 
 test:
 	python -m pytest --cov=main test_main.py
