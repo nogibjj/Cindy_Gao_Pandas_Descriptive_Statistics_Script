@@ -1,4 +1,4 @@
-[![Assignment 1 Python Application Test with Github Actions from Cindy](https://github.com/nogibjj/Cindy_Gao_pandas_descriptive/actions/workflows/actions.yml/badge.svg)](https://github.com/nogibjj/Cindy_Gao_pandas_descriptive/actions/workflows/actions.yml)
+
 # Cindy_Gao_pandas_descriptive
 
 - .devcontainer
@@ -17,6 +17,7 @@ Purpose for this project:
 2. Write functions for calculating mean, median and standard deviation for variables in the csv file
 3. Compare the functions for the accuracy
 4. Create data visualization (a boxplot) for variable Y
+5. Create a markdown or pdf file for the summary
 
 
 
