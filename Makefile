@@ -1,14 +1,14 @@
 install:
-	pip install --upgrade pip && pip install -r requirements.txt
+	pip install --upgrade pip --quiet && pip install -r requirements.txt --quiet
 
 format:
-	black *.py
+	black .
 
 lint:
-	pip install -r requirements.txt
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py . *.ipynb
 
 test:
-	python -m pytest -cov=main test_main.py
+	python -m pytest --cov=main test_main.py
 
 all: install format lint test
+
