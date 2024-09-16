@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data = "https://raw.githubusercontent.com/anlane611/datasets/main/population.csv"
-
 
 # read dataset from csv file
 def load_dataset(dataset):
