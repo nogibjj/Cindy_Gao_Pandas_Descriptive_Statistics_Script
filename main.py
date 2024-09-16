@@ -11,20 +11,20 @@ def load_dataset(dataset):
 
 
 # calculate the mean of variable:
-def get_mean(df, col):
-    mean_col = df[col].mean()
+def get_mean(df, var):
+    mean_col = df[var].mean()
     return mean_col
 
 
 # calculate the median of variable:
-def get_median(df, col):
-    median_col = df[col].median()
+def get_median(df, var):
+    median_col = df[var].median()
     return median_col
 
 
 # calculate the standard deviation of variable:
-def get_std(df, col):
-    std_col = df[col].std()
+def get_std(df, var):
+    std_col = df[var].std()
     return std_col
 
 
