@@ -7520,7 +7520,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9e1d615c-d983-4aee-b2dc-e315c9b22fbd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4344cbc7-2886-4dd3-a30c-7b757f05e795">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7530,7 +7530,6 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">main</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">get_mean</span><span class="p">,</span> <span class="n">get_median</span><span class="p">,</span> <span class="n">get_std</span><span class="p">,</span> <span class="n">save_to_md</span><span class="p">,</span> <span class="n">create_boxplot</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/anlane611/datasets/main/population.csv"</span>
@@ -7579,9 +7578,9 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print descriptive statistics</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dataframe</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7603,11 +7602,40 @@ min        -3.058220       1.000000       0.00000
 50%        19.971020       3.000000       1.00000
 75%        23.351637       4.000000       1.00000
 max        45.856084       5.000000       1.00000
-19.976
-19.971
-5.005
-5.005
+19.97579252039033
+19.97102000166825
+5.004964559422916
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define test functions</span>
+<span class="k">def</span> <span class="nf">test_mean</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Test the get_mean function"""</span>
+    <span class="k">assert</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"X1"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">test_median</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Test the get_median function"""</span>
+    <span class="k">assert</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"X1"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">test_std</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Test the get_std function"""</span>
+    <span class="k">assert</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"X1"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -7620,33 +7648,14 @@ max        45.856084       5.000000       1.00000
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define test functions</span>
-<span class="k">def</span> <span class="nf">test_mean</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Test the get_mean function"""</span>
-    <span class="k">assert</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X1"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X1"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">test_median</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Test the get_median function"""</span>
-    <span class="k">assert</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X1"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X1"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">test_std</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Test the get_std function"""</span>
-    <span class="k">assert</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X2"</span><span class="p">])</span> <span class="o">==</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"X2"</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">test_mean</span><span class="p">()</span>
     <span class="n">test_median</span><span class="p">()</span>
     <span class="n">test_std</span><span class="p">()</span>
     <span class="n">create_boxplot</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">],</span> <span class="s2">"boxplot.png"</span><span class="p">)</span>
-    <span class="n">mean_y</span> <span class="o">=</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span>
-    <span class="n">median_y</span> <span class="o">=</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span>
-    <span class="n">std_y</span> <span class="o">=</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s2">"Y"</span><span class="p">])</span>
+    <span class="n">mean_y</span> <span class="o">=</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span>
+    <span class="n">median_y</span> <span class="o">=</span> <span class="n">get_median</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span>
+    <span class="n">std_y</span> <span class="o">=</span> <span class="n">get_std</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">)</span>
     <span class="n">save_to_md</span><span class="p">(</span><span class="n">mean_y</span><span class="p">,</span> <span class="n">median_y</span><span class="p">,</span> <span class="n">std_y</span><span class="p">)</span>
 </pre></div>
 </div>

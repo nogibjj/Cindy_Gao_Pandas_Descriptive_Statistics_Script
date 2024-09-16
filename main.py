@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -11,36 +10,22 @@ def load_dataset(dataset):
     return df
 
 
-# calculate the mean of variable Y:
-def get_mean(script):
-    sum_script = 0
-    for i in range(len(script)):
-        sum_script += script[i]
-
-    mean_script = sum_script / len(script)
-    return round(mean_script, 3)
+# calculate the mean of variable:
+def get_mean(df, col):
+    mean_col = df[col].mean()
+    return mean_col
 
 
-# calculate the median of variable Y:
-def get_median(script):
-    sorted_script = np.sort(script)
-    num = len(sorted_script)
-    if num % 2 == 0:
-        median_script = (sorted_script[num // 2] + sorted_script[num // 2 + 1]) / 2
-    else:
-        median_script = sorted_script[np.ceil(num / 2)]
-    return round(median_script, 3)
+# calculate the median of variable:
+def get_median(df, col):
+    median_col = df[col].median()
+    return median_col
 
 
-# calculate the standard deviation of variable Y:
-def get_std(script):
-    num = len(script)
-    mean_s = np.mean(script)
-    sum_error = 0
-    for i in range(num):
-        sum_error += (mean_s - script[i]) ** 2
-    std_script = np.sqrt(sum_error / (num - 1))
-    return round(std_script, 3)
+# calculate the standard deviation of variable:
+def get_std(df, col):
+    std_col = df[col].std()
+    return std_col
 
 
 # data visualization: boxplot for variable Y
