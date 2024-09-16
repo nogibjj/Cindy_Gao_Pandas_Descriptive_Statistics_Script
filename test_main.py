@@ -18,20 +18,17 @@ print(get_std(dataframe, "Y"))
 # Define test functions
 def test_mean():
     """Test the get_mean function"""
-    assert get_mean(dataframe, "Y") is not None
-    assert get_mean(dataframe, "X1") is not None
+    assert get_mean(dataframe, "Y") == 19.97579252039033
 
 
 def test_median():
     """Test the get_median function"""
-    assert get_median(dataframe, "Y") is not None
-    assert get_median(dataframe, "X1") is not None
+    assert get_median(dataframe, "Y") == 19.97102000166825
 
 
 def test_std():
     """Test the get_std function"""
-    assert get_std(dataframe, "Y") is not None
-    assert get_std(dataframe, "X1") is not None
+    assert get_std(dataframe, "Y") == 5.004964559422916
 
 
 if __name__ == "__main__":
