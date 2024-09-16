@@ -10,20 +10,20 @@ def load_dataset(dataset):
 
 # calculate the mean of variable:
 def get_mean(df, var):
-    mean_col = df[var].mean()
-    return mean_col
+    mean_var = df[var].mean()
+    return mean_var
 
 
 # calculate the median of variable:
 def get_median(df, var):
-    median_col = df[var].median()
-    return median_col
+    median_var = df[var].median()
+    return median_var
 
 
 # calculate the standard deviation of variable:
 def get_std(df, var):
-    std_col = df[var].std()
-    return std_col
+    std_var = df[var].std()
+    return std_var
 
 
 # data visualization: boxplot for variable Y
